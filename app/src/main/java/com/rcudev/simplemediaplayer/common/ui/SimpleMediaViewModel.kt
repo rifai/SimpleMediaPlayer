@@ -12,12 +12,14 @@ import androidx.media3.common.MediaMetadata
 import com.rcudev.player_service.service.PlayerEvent
 import com.rcudev.player_service.service.SimpleMediaServiceHandler
 import com.rcudev.player_service.service.SimpleMediaState
+import com.rcudev.simplemediaplayer.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+
 
 @OptIn(SavedStateHandleSaveableApi::class)
 @HiltViewModel
@@ -88,8 +90,9 @@ class SimpleMediaViewModel @Inject constructor(
     }
 
     private fun loadData() {
+        val videoUri = Uri.parse("android.resource://com.rcudev.simplemediaplayer/" + R.raw.silence)
         val mediaItem = MediaItem.Builder()
-            .setUri("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+            .setUri(videoUri)//"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
             .setMediaMetadata(
                 MediaMetadata.Builder()
                     .setFolderType(MediaMetadata.FOLDER_TYPE_ALBUMS)

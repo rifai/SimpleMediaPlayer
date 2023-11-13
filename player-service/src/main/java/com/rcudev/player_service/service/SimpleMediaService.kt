@@ -1,6 +1,7 @@
 package com.rcudev.player_service.service
 
 import android.content.Intent
+import android.util.Log
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaSession
@@ -24,7 +25,12 @@ class SimpleMediaService : MediaSessionService() {
             mediaSessionService = this,
             mediaSession = mediaSession
         )
-
+        mediaSession.player.addListener(object : Player.Listener{
+            override fun onIsPlayingChanged(isPlaying: Boolean) {
+                super.onIsPlayingChanged(isPlaying)
+                Log.i("SimpleMediaService", "onIsPlayingChanged: $isPlaying")
+            }
+        })
         return super.onStartCommand(intent, flags, startId)
     }
 
