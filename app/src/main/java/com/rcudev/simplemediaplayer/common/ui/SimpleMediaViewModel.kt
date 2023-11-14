@@ -93,14 +93,15 @@ class SimpleMediaViewModel @Inject constructor(
         val videoUri = Uri.parse("android.resource://com.rcudev.simplemediaplayer/" + R.raw.silence)
         val mediaItem = MediaItem.Builder()
             .setUri(videoUri)//"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
-            .setMediaMetadata(
-                MediaMetadata.Builder()
-                    .setFolderType(MediaMetadata.FOLDER_TYPE_ALBUMS)
-                    .setArtworkUri(Uri.parse("https://i.pinimg.com/736x/4b/02/1f/4b021f002b90ab163ef41aaaaa17c7a4.jpg"))
-                    .setAlbumTitle("SoundHelix")
-                    .setDisplayTitle("Song 1")
-                    .build()
-            ).build()
+//            .setMediaMetadata(
+//                MediaMetadata.Builder()
+//                    .setFolderType(MediaMetadata.FOLDER_TYPE_ALBUMS)
+//                    .setArtworkUri(Uri.parse("https://i.pinimg.com/736x/4b/02/1f/4b021f002b90ab163ef41aaaaa17c7a4.jpg"))
+//                    .setAlbumTitle("SoundHelix")
+//                    .setDisplayTitle("Song 1")
+//                    .build()
+//            )
+            .build()
 
         //val mediaItemList = mutableListOf<MediaItem>()
         //(1..17).forEach {

@@ -41,8 +41,7 @@ internal fun SimpleMediaScreen(
                 LaunchedEffect(true) { // This is only call first time
                     startService()
                 }
-
-                ReadyContent(vm = vm, navController = navController)
+//                ReadyContent(vm = vm, navController = navController)
             }
         }
 

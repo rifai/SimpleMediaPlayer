@@ -54,6 +54,7 @@ class SimpleMediaActivity : ComponentActivity() {
             val intent = Intent(this, SimpleMediaService::class.java)
             startForegroundService(intent)
             isServiceRunning = true
+            viewModel.onUIEvent(UIEvent.PlayPause)
         }
     }
 }
